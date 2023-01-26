@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/test.dart';
 import 'package:multi_image_layout/multi_image_layout.dart';
-import 'package:openstreetmap_flutter/openstreetmap_flutter.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class content1 extends StatefulWidget {
   const content1({super.key});
@@ -12,6 +12,14 @@ class content1 extends StatefulWidget {
 }
 
 class _content1State extends State<content1> {
+  late GoogleMapController mapController;
+
+  final LatLng _center = const LatLng(45.521563, -122.677433);
+
+  void _onMapCreated(GoogleMapController controller) {
+    mapController = controller;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -138,6 +146,33 @@ class _content1State extends State<content1> {
                     ],
                   ),
                 ),
+              ),
+            ),
+            GoogleMap(
+              onMapCreated: _onMapCreated,
+              initialCameraPosition: CameraPosition(
+                target: _center,
+                zoom: 11.0,
+              ),
+              markers: Set<Marker>.of(
+                <Marker>[
+                  Marker(
+                    markerId: MarkerId('marker_1'),
+                    position: LatLng(45.521563, -122.677433),
+                    infoWindow: InfoWindow(
+                        title: 'Marker 1', snippet: 'This is the first marker'),
+                    icon: BitmapDescriptor.defaultMarker,
+                  ),
+                  Marker(
+                    markerId: MarkerId('marker_2'),
+                    position: LatLng(45.542363, -122.637433),
+                    infoWindow: InfoWindow(
+                        title: 'Marker 2',
+                        snippet: 'This is the second marker'),
+                    icon: BitmapDescriptor.defaultMarkerWithHue(
+                        BitmapDescriptor.hueViolet),
+                  ),
+                ],
               ),
             ),
           ],
