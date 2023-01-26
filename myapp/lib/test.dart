@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/page/content1.dart';
+import 'package:myapp/page/info.dart';
 import 'package:myapp/page/content2.dart';
 import 'package:myapp/page/content3.dart';
 import 'package:myapp/page/content4.dart';
@@ -71,7 +71,7 @@ class _testState extends State<test> {
         ),
         body: TabBarView(
           children: [
-            content1(),
+            info(),
             content2(),
             content3(),
             content4(),

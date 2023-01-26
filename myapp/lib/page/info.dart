@@ -1,25 +1,17 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/page/regsingle.dart';
 import 'package:myapp/test.dart';
 import 'package:multi_image_layout/multi_image_layout.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class content1 extends StatefulWidget {
-  const content1({super.key});
+class info extends StatefulWidget {
+  const info({super.key});
 
   @override
-  State<content1> createState() => _content1State();
+  State<info> createState() => _infoState();
 }
 
-class _content1State extends State<content1> {
-  late GoogleMapController mapController;
-
-  final LatLng _center = const LatLng(45.521563, -122.677433);
-
-  void _onMapCreated(GoogleMapController controller) {
-    mapController = controller;
-  }
-
+class _infoState extends State<info> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -47,6 +39,25 @@ class _content1State extends State<content1> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.90,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => regsingle(), //ไว้กดหน้าที่ต้องการไป
+                                ));
+                          },
+                          child: Text(
+                            'สมัครเข้าแข่งขัน',
+                            style: TextStyle(fontSize: 20),
+                          ), //แบ่งเป็นเดี่ยวหรือทีม
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.orange),
+                        ),
+                      ),
+                      Padding(padding: EdgeInsets.only(top: 10)),
                       Row(
                         children: [
                           Icon(Icons.calendar_month),
@@ -107,72 +118,9 @@ class _content1State extends State<content1> {
                         ],
                       ),
                       Padding(padding: EdgeInsets.only(bottom: 10)),
-                      SizedBox(height: 5),
-                      MultiImageViewer(
-                        width: MediaQuery.of(context).size.width * 0.9,
-                        images: [
-                          "https://picsum.photos/id/1/200/300",
-                        ],
-                      ),
-                      SizedBox(height: 5),
-                      MultiImageViewer(
-                        width: MediaQuery.of(context).size.width * 0.9,
-                        images: [
-                          "https://picsum.photos/id/1/200/300",
-                          "https://picsum.photos/id/2/200/300",
-                          "https://picsum.photos/id/3/200/300",
-                          "https://picsum.photos/id/4/200/300",
-                          "https://picsum.photos/id/5/200/300",
-                          "https://picsum.photos/id/5/200/300",
-                        ],
-                        textStyle: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: 25,
-                        ),
-                      ),
-                      Padding(padding: EdgeInsets.only(top: 10)),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'รายละเอียดสนามแข่ง',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 15),
-                          ), //หัวข้อ
-                          Text('รายละเอียด'), //ดึงข้อมูลจาก SQL มาแสดง
-                        ],
-                      ),
                     ],
                   ),
                 ),
-              ),
-            ),
-            GoogleMap(
-              onMapCreated: _onMapCreated,
-              initialCameraPosition: CameraPosition(
-                target: _center,
-                zoom: 11.0,
-              ),
-              markers: Set<Marker>.of(
-                <Marker>[
-                  Marker(
-                    markerId: MarkerId('marker_1'),
-                    position: LatLng(45.521563, -122.677433),
-                    infoWindow: InfoWindow(
-                        title: 'Marker 1', snippet: 'This is the first marker'),
-                    icon: BitmapDescriptor.defaultMarker,
-                  ),
-                  Marker(
-                    markerId: MarkerId('marker_2'),
-                    position: LatLng(45.542363, -122.637433),
-                    infoWindow: InfoWindow(
-                        title: 'Marker 2',
-                        snippet: 'This is the second marker'),
-                    icon: BitmapDescriptor.defaultMarkerWithHue(
-                        BitmapDescriptor.hueViolet),
-                  ),
-                ],
               ),
             ),
           ],
