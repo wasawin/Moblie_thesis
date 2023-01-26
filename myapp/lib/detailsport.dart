@@ -45,7 +45,7 @@ class _detailsportState extends State<detailsport> {
                   children: <Widget>[
                     ButtonsTabBar(
                       height: 60,
-                      backgroundColor: Colors.blue,
+                      backgroundColor: Colors.black,
                       unselectedBackgroundColor: Colors.lightBlue[400],
                       buttonMargin: EdgeInsets.all(0),
                       radius: 0,
@@ -62,7 +62,7 @@ class _detailsportState extends State<detailsport> {
                                     color: Color.fromARGB(255, 0, 0, 0),
                                   ),
                                   Text(
-                                    'ข้อมูล',
+                                    'Hello',
                                     style: TextStyle(color: Colors.black),
                                   ),
                                 ],
@@ -82,7 +82,7 @@ class _detailsportState extends State<detailsport> {
                                     size: 24,
                                     color: Colors.black,
                                   ),
-                                  Text('สายการแข่งขัน',
+                                  Text('match',
                                       style: TextStyle(color: Colors.black)),
                                 ],
                               ),

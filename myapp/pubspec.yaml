@@ -39,6 +39,8 @@ dependencies:
   animated_segmented_tab_control: ^1.0.1
   infinite_scroll_tab_view: ^1.0.3
   extended_tabs: ^4.0.2
+  multi_image_layout: ^0.0.5
+  openstreetmap_flutter: ^0.1.0
   
 
 
