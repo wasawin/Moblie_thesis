@@ -262,9 +262,9 @@ class _regsingleState extends State<regsingle> {
                   ElevatedButton(
                     child: Text("Pick a file"),
                     onPressed: () async {
-                      final file = await FilePicker.getFile();
+                      final file = await FilePicker.platform.pickFiles();
                       setState(() {
-                        _file = file;
+                        
                       });
                     },
                   ),
