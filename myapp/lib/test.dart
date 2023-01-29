@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/page/info.dart';
-import 'package:myapp/page/content2.dart';
-import 'package:myapp/page/content3.dart';
-import 'package:myapp/page/content4.dart';
-import 'package:myapp/page/content5.dart';
-import 'package:myapp/page/content6.dart';
+import 'package:myapp/tournament/content2.dart';
+import 'package:myapp/team/content3.dart';
+import 'package:myapp/match/content4.dart';
+import 'package:myapp/rank/content5.dart';
+import 'package:myapp/highlight/content6.dart';
 
 class test extends StatefulWidget {
   const test({super.key});

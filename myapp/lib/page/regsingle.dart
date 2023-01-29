@@ -16,7 +16,7 @@ class regsingle extends StatefulWidget {
 }
 
 class _regsingleState extends State<regsingle> {
-  final List<DropdownMenuItem<String>> items = [
+  final List<DropdownMenuItem<String>> items= [
     "ชาย",
     "หญิง",
   ].map<DropdownMenuItem<String>>((String value) {
@@ -28,15 +28,42 @@ class _regsingleState extends State<regsingle> {
       ),
     );
   }).toList();
+
+  // final List<DropdownMenuItem<String>> uni = [
+  //   "เทคโนโลยีราขมงคลธัญบุรี",
+  //   "เทคโนโลยีราขมงคลล้านนา",
+  // ].map<DropdownMenuItem<String>>((String valueuni) {
+  //   return DropdownMenuItem<String>(
+  //     value: valueuni,
+  //     child: Text(
+  //       valueuni,
+  //       style: TextStyle(color: Colors.black, fontSize: 15),
+  //     ),
+  //   );
+  // }).toList();
+
+  // final List<DropdownMenuItem<String>> faculty = [
+  //   "วิศวกรรมคอมพิวเตอร์",
+  //   "วิศวกรรมไฟฟ้า",
+  // ].map<DropdownMenuItem<String>>((String valuefac) {
+  //   return DropdownMenuItem<String>(
+  //     value: valuefac,
+  //     child: Text(
+  //       valuefac,
+  //       style: TextStyle(color: Colors.black, fontSize: 15),
+  //     ),
+  //   );
+  // }).toList();
+
   String? selectedValue;
   DateTime? _selectedDate;
   TextEditingController dateInput = TextEditingController();
   String _fileName = "";
   late File _file;
-  
+
   @override
   Widget build(BuildContext context) {
-    var widhtB = MediaQuery.of(context).size.width * 0.25;
+    var widhtB = MediaQuery.of(context).size.width * 0.3;
     var widhtIB = MediaQuery.of(context).size.width * 0.6;
 
     return Container(
@@ -64,14 +91,14 @@ class _regsingleState extends State<regsingle> {
               Row(
                 children: [
                   Container(width: widhtB, child: Text('ชื่อ')),
-                  SizedBox(width: 20),
+                  SizedBox(width: 5),
                   Container(
                     width: widhtIB,
                     child: Expanded(
                       child: TextField(
                         style: TextStyle(height: 1),
                         decoration: InputDecoration(
-                            hintText: "Enter your name",
+                            hintText: "",
                             border: OutlineInputBorder()),
                       ),
                     ),
@@ -81,14 +108,14 @@ class _regsingleState extends State<regsingle> {
               Row(
                 children: [
                   Container(width: widhtB, child: Text('นามสกุล')),
-                  SizedBox(width: 20),
+                  SizedBox(width: 5),
                   Container(
                     width: widhtIB,
                     child: Expanded(
                       child: TextField(
                         style: TextStyle(height: 1),
                         decoration: InputDecoration(
-                            hintText: "Enter your name",
+                            hintText: "",
                             border: OutlineInputBorder()),
                       ),
                     ),
@@ -98,7 +125,7 @@ class _regsingleState extends State<regsingle> {
               Row(
                 children: [
                   Container(width: widhtB, child: Text('เพศ')),
-                  SizedBox(width: 20),
+                  SizedBox(width: 5),
                   Container(
                     width: MediaQuery.of(context).size.width * 0.4,
                     child: DropdownButton(
@@ -117,7 +144,7 @@ class _regsingleState extends State<regsingle> {
               Row(
                 children: [
                   Container(width: widhtB, child: Text('วันเกิด')),
-                  SizedBox(width: 20),
+                  SizedBox(width: 5),
                   Container(
                       width: MediaQuery.of(context).size.width * 0.4,
                       child: TextField(
@@ -157,9 +184,9 @@ class _regsingleState extends State<regsingle> {
               Row(
                 children: [
                   Container(width: widhtB, child: Text('เบอร์โทร')),
-                  SizedBox(width: 20),
+                  SizedBox(width: 5),
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.6,
+                    width: widhtIB,
                     child: Expanded(
                       child: TextField(
                         style: TextStyle(height: 1),
@@ -173,7 +200,7 @@ class _regsingleState extends State<regsingle> {
               Row(
                 children: [
                   Container(width: widhtB, child: Text('อีเมล')),
-                  SizedBox(width: 20),
+                  SizedBox(width: 5),
                   Container(
                     width: widhtIB,
                     child: Expanded(
@@ -189,9 +216,9 @@ class _regsingleState extends State<regsingle> {
               Row(
                 children: [
                   Container(width: widhtB, child: Text('มหาวิทยาลัย')),
-                  SizedBox(width: 20),
+                  SizedBox(width: 5),
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.4,
+                    width: MediaQuery.of(context).size.width * 0.6,
                     child: DropdownButton(
                       value: selectedValue,
                       items: items,
@@ -200,7 +227,7 @@ class _regsingleState extends State<regsingle> {
                           selectedValue = value;
                         });
                       },
-                      hint: Text(''),
+                      hint: Text('เลือกมหาวิทยาลัย'),
                     ),
                   ),
                 ],
@@ -208,9 +235,9 @@ class _regsingleState extends State<regsingle> {
               Row(
                 children: [
                   Container(width: widhtB, child: Text('คณะ')),
-                  SizedBox(width: 20),
+                  SizedBox(width: 5),
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.4,
+                    width: MediaQuery.of(context).size.width * 0.6,
                     child: DropdownButton(
                       value: selectedValue,
                       items: items,
@@ -219,7 +246,7 @@ class _regsingleState extends State<regsingle> {
                           selectedValue = value;
                         });
                       },
-                      hint: Text(''),
+                      hint: Text('เลือกคณะ'),
                     ),
                   ),
                 ],
@@ -227,7 +254,7 @@ class _regsingleState extends State<regsingle> {
               Row(
                 children: [
                   Container(width: widhtB, child: Text('บัตรประชาชน')),
-                  SizedBox(width: 20),
+                  SizedBox(width: 5),
                   Container(
                     width: widhtIB,
                     child: Expanded(
@@ -243,7 +270,7 @@ class _regsingleState extends State<regsingle> {
               Row(
                 children: [
                   Container(width: widhtB, child: Text('รหัสนักศึกษา')),
-                  SizedBox(width: 20),
+                  SizedBox(width: 5),
                   Container(
                     width: widhtIB,
                     child: Expanded(
@@ -256,28 +283,68 @@ class _regsingleState extends State<regsingle> {
                   ),
                 ],
               ),
-              Row(
-                children: <Widget>[
-                  Text("Select a file"),
-                  ElevatedButton(
-                    child: Text("Pick a file"),
-                    onPressed: () async {
-                      final file = await FilePicker.platform.pickFiles();
-                      setState(() {
-                        
-                      });
-                    },
-                  ),
-                  _file != null ? Text(_file.path) : Container(),
-                ],
-              ),
+              // Row(
+              //   children: <Widget>[
+              //     Text("Select a file"),
+              //     ElevatedButton(
+              //       child: Text("Pick a file"),
+              //       onPressed: () async {
+              //         final file = await FilePicker.platform.pickFiles();
+              //         setState(() {
+
+              //         });
+              //       },
+              //     ),
+              //     _file != null ? Text(_file.path) : Container(),
+              //   ],
+              // ),
+              // Padding(
+              //   padding: const EdgeInsets.only(top: 20,left: 90),
+              //   child: Row(
+              //     children: [
+              //       Padding(
+              //         padding: const EdgeInsets.all(8.0),
+              //         child: ElevatedButton(
+              //           onPressed: () {
+              //             // Navigator.push(
+              //             //     context,
+              //             //     MaterialPageRoute(
+              //             //       builder: (context) => regsingle(), //ไว้กดหน้าที่ต้องการไป
+              //             //     )
+              //             //   );
+              //           },
+              //           child: Text(
+              //             'ยกเลิก',
+              //             style: TextStyle(fontSize: 15),
+              //           ), 
+              //           style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+              //         ),
+              //       ),
+              //       ElevatedButton(
+              //         onPressed: () {
+              //           // Navigator.push(
+              //           //     context,
+              //           //     MaterialPageRoute(
+              //           //       builder: (context) => regsingle(), //ไว้กดหน้าที่ต้องการไป
+              //           //     )
+              //           //   );
+              //         },
+              //         child: Text(
+              //           'ยืนยัน',
+              //           style: TextStyle(fontSize: 15),
+              //         ),
+              //         style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+              //       ),
+
+              //     ],
+              //   ),
+              // ),
 
 
 
 
 
-
-
+              
             ],
           ),
         ),

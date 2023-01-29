@@ -92,7 +92,7 @@ class _sportState extends State<sport> {
                 return GestureDetector(
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => test())); //แก้ไขเป็นแต่ละกีฬา พารามิเตอร์
+                        MaterialPageRoute(builder: (context) => detailsport())); //แก้ไขเป็นแต่ละกีฬา พารามิเตอร์
                   },
                   child: Card(
                     elevation: 5,
