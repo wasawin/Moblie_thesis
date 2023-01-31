@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:myapp/page/regsingle.dart';
+import 'package:myapp/infosport/regsingle.dart';
 import 'package:myapp/test.dart';
 import 'package:multi_image_layout/multi_image_layout.dart';
 

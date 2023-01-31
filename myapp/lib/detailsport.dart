@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
-import 'package:myapp/page/info.dart';
+import 'package:myapp/infosport/info.dart';
 import 'package:myapp/tournament/content2.dart';
-import 'package:myapp/team/content3.dart';
+import 'package:myapp/team/showteam.dart';
 import 'package:myapp/match/content4.dart';
 import 'package:myapp/rank/content5.dart';
 import 'package:myapp/highlight/content6.dart';
@@ -75,7 +75,7 @@ class _detailsportState extends State<detailsport> {
           children: [
             info(),
             content2(),
-            content3(),
+            showteam(),
             content4(),
             content5(),
             content6(),

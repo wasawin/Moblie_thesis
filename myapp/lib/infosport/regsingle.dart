@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:dropdown_button2/custom_dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/infosport/info.dart';
 import 'package:myapp/test.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:intl/intl.dart';
@@ -298,47 +299,28 @@ class _regsingleState extends State<regsingle> {
               //     _file != null ? Text(_file.path) : Container(),
               //   ],
               // ),
-              // Padding(
-              //   padding: const EdgeInsets.only(top: 20,left: 90),
-              //   child: Row(
-              //     children: [
-              //       Padding(
-              //         padding: const EdgeInsets.all(8.0),
-              //         child: ElevatedButton(
-              //           onPressed: () {
-              //             // Navigator.push(
-              //             //     context,
-              //             //     MaterialPageRoute(
-              //             //       builder: (context) => regsingle(), //ไว้กดหน้าที่ต้องการไป
-              //             //     )
-              //             //   );
-              //           },
-              //           child: Text(
-              //             'ยกเลิก',
-              //             style: TextStyle(fontSize: 15),
-              //           ), 
-              //           style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-              //         ),
-              //       ),
-              //       ElevatedButton(
-              //         onPressed: () {
-              //           // Navigator.push(
-              //           //     context,
-              //           //     MaterialPageRoute(
-              //           //       builder: (context) => regsingle(), //ไว้กดหน้าที่ต้องการไป
-              //           //     )
-              //           //   );
-              //         },
-              //         child: Text(
-              //           'ยืนยัน',
-              //           style: TextStyle(fontSize: 15),
-              //         ),
-              //         style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
-              //       ),
-
-              //     ],
-              //   ),
-              // ),
+              Padding(
+                padding: const EdgeInsets.only(top: 20,left: 90),
+                child: Row(
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        // Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //       builder: (context) => (), //ไว้กดหน้าที่ต้องการไป
+                        //     )
+                        //   );
+                      },
+                      child: Text(
+                        'ยืนยัน',
+                        style: TextStyle(fontSize: 15),
+                      ),
+                      style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+                    ),
+                  ],
+                ),
+              ),
 
 
 
