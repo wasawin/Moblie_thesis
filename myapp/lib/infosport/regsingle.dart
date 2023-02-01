@@ -25,7 +25,7 @@ class _regsingleState extends State<regsingle> {
       value: value,
       child: Text(
         value,
-        style: TextStyle(color: Colors.black, fontSize: 5),
+        style: TextStyle(color: Colors.black, fontSize: 15),
       ),
     );
   }).toList();
@@ -65,6 +65,7 @@ class _regsingleState extends State<regsingle> {
             padding: EdgeInsets.only(left: 15, top: 10),
             width: MediaQuery.of(context).size.width * 1,
             height: MediaQuery.of(context).size.height * 1,
+            
             color: Color.fromARGB(255, 233, 231, 231),
             child: Column(
               children: [

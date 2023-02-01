@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:ffi';
-import 'dart:io';
+import 'package:myapp/multiform.dart';
 
 
 class test extends StatefulWidget {
@@ -14,14 +13,17 @@ class _testState extends State<test> {
   @override
   Widget build(BuildContext context) {
 
-   
-    return Container(
-      color: Colors.grey[400], 
-      child: Column(
-        children: [
-
-        ],
+      return MaterialApp(
+      title: 'Multi Form',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        cardColor: Color(0xFF1DCC8C),
+        platform: TargetPlatform.iOS,
       ),
+      debugShowCheckedModeBanner: false,
+      home: multiform(),
     );
+   
+    
   }
 }
