@@ -7,7 +7,7 @@ import 'package:myapp/infosport/info.dart';
 import 'package:myapp/test.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:intl/intl.dart';
-import 'package:file_picker/file_picker.dart';
+//import 'package:file_picker/file_picker.dart';
 
 class regsingle extends StatefulWidget {
   const regsingle({super.key});
@@ -264,40 +264,40 @@ class _regsingleState extends State<regsingle> {
                     ),
                   ],
                 ),
-                Row(
-                  children: [
-                    Text(
-                      '$textt',
-                    ),
-                    //Image(image: placeholder),
-                    TextButton(
-                      onPressed: () async {
-                        final result = await FilePicker.platform
-                            .pickFiles(allowMultiple: false);
-                        if (result == null) return;
-                        final files = result
-                            .files; //EDIT: THIS PROBABLY CAUSED YOU AN ERROR
-                        final fileExtension =
-                            result.files.first.path!.split('').last;
-                        if (fileExtension != "png" &&
-                            fileExtension != "jpg" &&
-                            fileExtension != "pdf") {
-                          // แสดงข้อความว่าไม่สามารถเลือกไฟล์ประเภทนั้นได้
-                          return;
-                        }
-                        final fileSize = result.files.first.size;
-                        if (fileSize > 4 * 1024 * 1024) {
-                          Text('ไฟล์มีขนาดใหญ่เกินไป');
-                          return;
-                        }
-                        textt = result.files.first.path.toString();
-                        placeholder = FileImage(File(textt));
-                        setState(() {});
-                      },
-                      child: Text('เลือกไฟล์'),
-                    )
-                  ],
-                ),
+                // Row(
+                //   children: [
+                //     Text(
+                //       '$textt',
+                //     ),
+                //     //Image(image: placeholder),
+                //     TextButton(
+                //       onPressed: () async {
+                //         final result = await FilePicker.platform
+                //             .pickFiles(allowMultiple: false);
+                //         if (result == null) return;
+                //         final files = result
+                //             .files; //EDIT: THIS PROBABLY CAUSED YOU AN ERROR
+                //         final fileExtension =
+                //             result.files.first.path!.split('').last;
+                //         if (fileExtension != "png" &&
+                //             fileExtension != "jpg" &&
+                //             fileExtension != "pdf") {
+                //           // แสดงข้อความว่าไม่สามารถเลือกไฟล์ประเภทนั้นได้
+                //           return;
+                //         }
+                //         final fileSize = result.files.first.size;
+                //         if (fileSize > 4 * 1024 * 1024) {
+                //           Text('ไฟล์มีขนาดใหญ่เกินไป');
+                //           return;
+                //         }
+                //         textt = result.files.first.path.toString();
+                //         placeholder = FileImage(File(textt));
+                //         setState(() {});
+                //       },
+                //       child: Text('เลือกไฟล์'),
+                //     )
+                //   ],
+                // ),
 
                 Padding(
                   padding: const EdgeInsets.only(top: 30, left: 140),
