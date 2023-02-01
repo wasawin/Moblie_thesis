@@ -91,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => test())); //ไว้กดหน้าที่ต้องการไป
+                                            builder: (context) => sport())); //ไว้กดหน้าที่ต้องการไป
                                   },
                                   child: Text('ดูทั้งหมด'),
                                   style: ElevatedButton.styleFrom(
