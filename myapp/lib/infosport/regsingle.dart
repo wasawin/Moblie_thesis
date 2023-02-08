@@ -7,7 +7,7 @@ import 'package:myapp/infosport/info.dart';
 import 'package:myapp/test.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:intl/intl.dart';
-//import 'package:file_picker/file_picker.dart';
+import 'package:file_picker/file_picker.dart';
 
 class regsingle extends StatefulWidget {
   const regsingle({super.key});
@@ -17,6 +17,18 @@ class regsingle extends StatefulWidget {
 }
 
 class _regsingleState extends State<regsingle> {
+  var filea;
+  var fileb;
+  var filec;
+
+  var fileaname;
+  var filebname;
+  var filecname;
+
+  String textfilenamea = "";
+  String textfilenameb = "";
+  String textfilenamec = "";
+
   final List<DropdownMenuItem<String>> items = [
     "ชาย",
     "หญิง",
@@ -26,6 +38,36 @@ class _regsingleState extends State<regsingle> {
       child: Text(
         value,
         style: TextStyle(color: Colors.black, fontSize: 15),
+      ),
+    );
+  }).toList();
+
+  final List<DropdownMenuItem<String>> uni = [
+    "เทคโนโลยีราชมงคลธัญบุรี",
+    "เทคโนโลยีราชมงคลล้านนา",
+    "เทคโนโลยีราชมงคลพระนคร",
+  ].map<DropdownMenuItem<String>>((String value) {
+    return DropdownMenuItem<String>(
+      value: value,
+      child: Text(
+        value,
+        style: TextStyle(color: Colors.black, fontSize: 15),
+        maxLines: 2,
+      ),
+    );
+  }).toList();
+
+  final List<DropdownMenuItem<String>> fac = [
+    "วิศกรรมคอมพิวเตอร์",
+    "วิศกรรมไฟฟ้า",
+    "วิศกรรมเครื่องยนต์",
+  ].map<DropdownMenuItem<String>>((String value) {
+    return DropdownMenuItem<String>(
+      value: value,
+      child: Text(
+        value,
+        style: TextStyle(color: Colors.black, fontSize: 15),
+        maxLines: 2,
       ),
     );
   }).toList();
@@ -65,7 +107,6 @@ class _regsingleState extends State<regsingle> {
             padding: EdgeInsets.only(left: 15, top: 10),
             width: MediaQuery.of(context).size.width * 1,
             height: MediaQuery.of(context).size.height * 1,
-            
             color: Color.fromARGB(255, 233, 231, 231),
             child: Column(
               children: [
@@ -201,7 +242,7 @@ class _regsingleState extends State<regsingle> {
                       width: MediaQuery.of(context).size.width * 0.6,
                       child: DropdownButton(
                         value: selectedValue,
-                        items: items,
+                        items: uni,
                         onChanged: (value) {
                           setState(() {
                             selectedValue = value;
@@ -220,7 +261,7 @@ class _regsingleState extends State<regsingle> {
                       width: MediaQuery.of(context).size.width * 0.6,
                       child: DropdownButton(
                         value: selectedValue,
-                        items: items,
+                        items: fac,
                         onChanged: (value) {
                           setState(() {
                             selectedValue = value;
@@ -248,60 +289,129 @@ class _regsingleState extends State<regsingle> {
                     ),
                   ],
                 ),
+                // Row(
+                //   children: [
+                //     Container(width: widhtB, child: Text('รหัสนักศึกษา')),
+                //     SizedBox(width: 5),
+                //     Container(
+                //       width: widhtIB,
+                //       child: Expanded(
+                //         child: TextField(
+                //           style: TextStyle(height: 1),
+                //           keyboardType: TextInputType.number,
+                //           decoration: InputDecoration(
+                //               hintText: "", border: OutlineInputBorder()),
+                //         ),
+                //       ),
+                //     ),
+                //   ],
+                // ),
+                SizedBox(height: 10),
                 Row(
                   children: [
-                    Container(width: widhtB, child: Text('รหัสนักศึกษา')),
-                    SizedBox(width: 5),
-                    Container(
-                      width: widhtIB,
-                      child: Expanded(
-                        child: TextField(
-                          style: TextStyle(height: 1),
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                              hintText: "", border: OutlineInputBorder()),
-                        ),
-                      ),
+                    Text(
+                      '$textt',
                     ),
                   ],
                 ),
-                // Row(
-                //   children: [
-                //     Text(
-                //       '$textt',
-                //     ),
-                //     //Image(image: placeholder),
-                //     TextButton(
-                //       onPressed: () async {
-                //         final result = await FilePicker.platform
-                //             .pickFiles(allowMultiple: false);
-                //         if (result == null) return;
-                //         final files = result
-                //             .files; //EDIT: THIS PROBABLY CAUSED YOU AN ERROR
-                //         final fileExtension =
-                //             result.files.first.path!.split('').last;
-                //         if (fileExtension != "png" &&
-                //             fileExtension != "jpg" &&
-                //             fileExtension != "pdf") {
-                //           // แสดงข้อความว่าไม่สามารถเลือกไฟล์ประเภทนั้นได้
-                //           return;
-                //         }
-                //         final fileSize = result.files.first.size;
-                //         if (fileSize > 4 * 1024 * 1024) {
-                //           Text('ไฟล์มีขนาดใหญ่เกินไป');
-                //           return;
-                //         }
-                //         textt = result.files.first.path.toString();
-                //         placeholder = FileImage(File(textt));
-                //         setState(() {});
-                //       },
-                //       child: Text('เลือกไฟล์'),
-                //     )
-                //   ],
-                // ),
+
+                Container(
+                  //color: Colors.black,
+                  height: MediaQuery.of(context).size.height * 0.18,
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Text(textfilenamea),
+                          IconButton(
+                              onPressed: () async {
+                                FilePickerResult? result =
+                                    await FilePicker.platform.pickFiles();
+                                if (result != null) {
+                                  PlatformFile filea = result.files.first;
+
+                                  print(filea.name);
+                                  print(filea.bytes);
+                                  print(filea.size);
+                                  print(filea.extension);
+                                  print(filea.path);
+
+                                  setState(() {
+                                    fileaname = filea.name;
+                                    print(fileaname);
+                                    textfilenamea = filea.name;
+                                  });
+                                } else {
+                                  // User canceled the picker
+                                }
+                              },
+                              icon: Icon(Icons.add)),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text(textfilenameb),
+                          IconButton(
+                              onPressed: () async {
+                                FilePickerResult? result =
+                                    await FilePicker.platform.pickFiles();
+                                if (result != null) {
+                                  PlatformFile fileb = result.files.first;
+
+                                  print(fileb.name);
+                                  print(fileb.bytes);
+                                  print(fileb.size);
+                                  print(fileb.extension);
+                                  print(fileb.path);
+
+                                  setState(() {
+                                    filebname = fileb.name;
+                                    print(filebname);
+                                    textfilenameb = fileb.name;
+                                  });
+                                } else {
+                                  // User canceled the picker
+                                }
+                              },
+                              icon: Icon(Icons.add)),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text(textfilenamec),
+                          IconButton(
+                              onPressed: () async {
+                                FilePickerResult? result =
+                                    await FilePicker.platform.pickFiles();
+                                if (result != null) {
+                                  PlatformFile filec = result.files.first;
+
+                                  print(filec.name);
+                                  print(filec.bytes);
+                                  print(filec.size);
+                                  print(filec.extension);
+                                  print(filec.path);
+
+                                  setState(() {
+                                    filecname = filec.name;
+                                    print(filecname);
+                                    textfilenamec = filec.name;
+                                  });
+                                } else {
+                                  // User canceled the picker
+                                }
+                              },
+                              icon: Icon(Icons.add)),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
 
                 Padding(
-                  padding: const EdgeInsets.only(top: 30, left: 140),
+                  padding: const EdgeInsets.only(top: 8, left: 140),
                   child: Row(
                     children: [
                       ElevatedButton(
@@ -312,6 +422,9 @@ class _regsingleState extends State<regsingle> {
                           //       builder: (context) => (), //ไว้กดหน้าที่ต้องการไป
                           //     )
                           //   );
+                          print(fileaname);
+                          print(filebname);
+                          print(filecname);
                         },
                         child: Text(
                           'ยืนยัน',

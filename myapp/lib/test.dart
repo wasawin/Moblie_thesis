@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/multiform.dart';
+
 
 
 class test extends StatefulWidget {
@@ -21,7 +21,7 @@ class _testState extends State<test> {
         platform: TargetPlatform.iOS,
       ),
       debugShowCheckedModeBanner: false,
-      home: multiform(),
+      //home: multiform(),
     );
    
     
