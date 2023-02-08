@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
 import 'package:myapp/infosport/info.dart';
-import 'package:myapp/tournament/content2.dart';
+import 'package:myapp/tournament/showtnm.dart';
 import 'package:myapp/team/showteam.dart';
-import 'package:myapp/match/content4.dart';
-import 'package:myapp/rank/content5.dart';
+import 'package:myapp/match/showmatch.dart';
+import 'package:myapp/rank/showrank.dart';
 import 'package:myapp/highlight/content6.dart';
 
 class detailsport extends StatefulWidget {
@@ -74,10 +74,10 @@ class _detailsportState extends State<detailsport> {
         body: TabBarView(
           children: [
             info(),
-            content2(),
+            showtnm(),
             showteam(),
-            content4(),
-            content5(),
+            showmatch(),
+            showrank(),
             content6(),
           ],
         ),

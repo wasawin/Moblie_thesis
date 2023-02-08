@@ -289,23 +289,23 @@ class _regsingleState extends State<regsingle> {
                     ),
                   ],
                 ),
-                // Row(
-                //   children: [
-                //     Container(width: widhtB, child: Text('รหัสนักศึกษา')),
-                //     SizedBox(width: 5),
-                //     Container(
-                //       width: widhtIB,
-                //       child: Expanded(
-                //         child: TextField(
-                //           style: TextStyle(height: 1),
-                //           keyboardType: TextInputType.number,
-                //           decoration: InputDecoration(
-                //               hintText: "", border: OutlineInputBorder()),
-                //         ),
-                //       ),
-                //     ),
-                //   ],
-                // ),
+                Row(
+                  children: [
+                    Container(width: widhtB, child: Text('รหัสนักศึกษา')),
+                    SizedBox(width: 5),
+                    Container(
+                      width: widhtIB,
+                      child: Expanded(
+                        child: TextField(
+                          style: TextStyle(height: 1),
+                          keyboardType: TextInputType.number,
+                          decoration: InputDecoration(
+                              hintText: "", border: OutlineInputBorder()),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
                 SizedBox(height: 10),
                 Row(
                   children: [
