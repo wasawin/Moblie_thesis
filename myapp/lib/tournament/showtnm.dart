@@ -23,31 +23,31 @@ class _showtnmState extends State<showtnm> {
                 label: Text('ชื่อ',
                     style: TextStyle(
                         fontSize: 18, fontWeight: FontWeight.bold))),
-            DataColumn(
-                label: Text('คะแนนรวม',
-                    style: TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.bold))),
+            // DataColumn(
+            //     label: Text('คะแนนรวม',
+            //         style: TextStyle(
+            //             fontSize: 18, fontWeight: FontWeight.bold))),
           ],
           rows: [
             DataRow(cells: [
               DataCell(Text('1')),
-              DataCell(Text('Liverpool - Real Madrid')),
-              DataCell(Text('10')),
+              DataCell(Text('ชลธี - กิตติภพ')),
+              //DataCell(Text('10')),
             ]),
             DataRow(cells: [
               DataCell(Text('2')),
-              DataCell(Text('ManU - Man Chester')),
-              DataCell(Text('5')),
+              DataCell(Text('จักริน - ปฏิพล')),
+              //DataCell(Text('5')),
             ]),
             DataRow(cells: [
               DataCell(Text('3')),
-              DataCell(Text('Harry - Potter')),
-              DataCell(Text('3')),
+              DataCell(Text('เมธานันท์ - วสวิญญ์')),
+              //DataCell(Text('3')),
             ]),
             DataRow(cells: [
               DataCell(Text('4')),
-              DataCell(Text('Peter - Parker')),
-              DataCell(Text('2')),
+              DataCell(Text('นนทพันธ์ - นพดล')),
+              //DataCell(Text('2')),
             ]),
           ],
         ),

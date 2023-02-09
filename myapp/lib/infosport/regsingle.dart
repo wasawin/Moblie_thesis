@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:dropdown_button2/custom_dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/infosport/info.dart';
+import 'package:myapp/infosport/regteam.dart';
 import 'package:myapp/test.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:intl/intl.dart';
@@ -416,12 +417,12 @@ class _regsingleState extends State<regsingle> {
                     children: [
                       ElevatedButton(
                         onPressed: () {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //       builder: (context) => (), //ไว้กดหน้าที่ต้องการไป
-                          //     )
-                          //   );
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => regteam(), //ไว้กดหน้าที่ต้องการไป
+                              )
+                            );
                           print(fileaname);
                           print(filebname);
                           print(filecname);
@@ -432,6 +433,7 @@ class _regsingleState extends State<regsingle> {
                         ),
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.green),
+                            
                       ),
                     ],
                   ),

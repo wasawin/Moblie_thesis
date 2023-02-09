@@ -32,22 +32,22 @@ class _showrankState extends State<showrank> {
             rows: [
               DataRow(cells: [
                 DataCell(Text('1')),
-                DataCell(Text('Stephen')),
+                DataCell(Text('ชลธี')),
                 DataCell(Text('20')),
               ]),
               DataRow(cells: [
                 DataCell(Text('2')),
-                DataCell(Text('John')),
+                DataCell(Text('นนทพัทธ์')),
                 DataCell(Text('10')),
               ]),
               DataRow(cells: [
                 DataCell(Text('3')),
-                DataCell(Text('Harry')),
+                DataCell(Text('จักริน')),
                 DataCell(Text('5')),
               ]),
               DataRow(cells: [
                 DataCell(Text('4')),
-                DataCell(Text('Peter')),
+                DataCell(Text('วสวิญญ์')),
                 DataCell(Text('1')),
               ]),
             ],
