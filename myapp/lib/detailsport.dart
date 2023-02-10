@@ -5,7 +5,7 @@ import 'package:myapp/tournament/showtnm.dart';
 import 'package:myapp/team/showteam.dart';
 import 'package:myapp/match/showmatch.dart';
 import 'package:myapp/rank/showrank.dart';
-import 'package:myapp/highlight/content6.dart';
+import 'package:myapp/highlight/showhighlight.dart';
 
 class detailsport extends StatefulWidget {
   const detailsport({super.key});
@@ -78,7 +78,7 @@ class _detailsportState extends State<detailsport> {
             showteam(),
             showmatch(),
             showrank(),
-            content6(),
+            showhighlight(),
           ],
         ),
       ),

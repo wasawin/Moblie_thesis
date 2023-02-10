@@ -2,6 +2,8 @@ import 'dart:ffi';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:file_picker/file_picker.dart';
+import 'package:myapp/infosport/addmember.dart';
 
 
 class regteam extends StatefulWidget {
@@ -12,6 +14,9 @@ class regteam extends StatefulWidget {
 }
 
 class _regteamState extends State<regteam> {
+  String textfilenamea = "";
+  var fileaname;
+  var filea;
   @override
   Widget build(BuildContext context) {
     var widthtextfield = MediaQuery.of(context).size.width * 0.6;
@@ -24,7 +29,7 @@ class _regteamState extends State<regteam> {
           title: Text(
             "สมัครแข่งขันทีม",
             style: TextStyle(fontSize: 18),
-          ), //แก้ไขหัวข้อเปลี่ยนตามกีฬาที่กด
+          ), 
           leading: BackButton(
             onPressed: () {
               Navigator.pop(context);
@@ -124,35 +129,76 @@ class _regteamState extends State<regteam> {
               ),
               Row(
                 children: [
-                  Text("อัปโหลดรูปภาพทีม"),
-                  
+                  Text("แนบรูปทีม"),
                 ],
               ),
-              Row(
-                children: [
-                  ElevatedButton(
-                    onPressed: (){
+              Container(
+                //color: Colors.black,
+                height: MediaQuery.of(context).size.height * 0.10,
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Text(textfilenamea),
+                          IconButton(
+                              onPressed: () async {
+                                FilePickerResult? result =
+                                    await FilePicker.platform.pickFiles();
+                                if (result != null) {
+                                  PlatformFile filea = result.files.first;
 
-                    }, 
-                    child: Text('ยืนยัน',style: TextStyle(fontSize: 15),),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green
-                    ),
-                    )
-                ],
-              )
+                                  print(filea.name);
+                                  print(filea.bytes);
+                                  print(filea.size);
+                                  print(filea.extension);
+                                  print(filea.path);
 
+                                  setState(() {
+                                    fileaname = filea.name;
+                                    print(fileaname);
+                                    textfilenamea = filea.name;
+                                  });
+                                } else {
+                                  // User canceled the picker
+                                }
+                              },
+                              icon: Icon(Icons.add)),
+                        ],
+                      ),
+                    ],
+                  ),
+              ),
 
-
+              Padding(
+                padding: const EdgeInsets.only(top: 8, left: 140),
+                child: Row(
+                  children: [
+                    ElevatedButton(
+                      onPressed: (){
+                       Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => addmember(), //ไว้กดหน้าที่ต้องการไป
+                              )
+                            );
+                          print(fileaname);
+                      }, 
+                      child: Text('ยืนยัน',style: TextStyle(fontSize: 15),),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green
+                      ),
+                      )
+                  ],
+                ),
+              ),
+              
 
             ],
           ),
         ),
       ),
-
-
-
-
       ),
     );
   }

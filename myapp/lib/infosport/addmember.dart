@@ -10,14 +10,14 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:intl/intl.dart';
 import 'package:file_picker/file_picker.dart';
 
-class regsingle extends StatefulWidget {
-  const regsingle({super.key});
+class addmember extends StatefulWidget {
+  const addmember({super.key});
 
   @override
-  State<regsingle> createState() => _regsingleState();
+  State<addmember> createState() => _addmemberState();
 }
 
-class _regsingleState extends State<regsingle> {
+class _addmemberState extends State<addmember> {
   var filea;
   var fileb;
   var filec;
@@ -94,7 +94,7 @@ class _regsingleState extends State<regsingle> {
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 3, 42, 121),
           title: Text(
-            "สมัครแข่งขันเดี่ยว",
+            "เพิ่มสมาชิกทีม",
             style: TextStyle(fontSize: 18),
           ), //แก้ไขหัวข้อเปลี่ยนตามกีฬาที่กด
           leading: BackButton(
@@ -102,7 +102,21 @@ class _regsingleState extends State<regsingle> {
               Navigator.pop(context);
             },
           ),
+          actions: [
+            Container(
+              //color: Colors.white,
+              child: TextButton( 
+                onPressed: (){
+
+                }, 
+                child: Text("ยืนยัน",style: TextStyle(color:Colors.white,fontSize: 15),),
+                  
+              ),
+            ),
+            SizedBox(width: 10,),
+          ],
         ),
+
         body: SingleChildScrollView(
           child: Container(
             padding: EdgeInsets.only(left: 15, top: 10),
@@ -345,7 +359,7 @@ class _regsingleState extends State<regsingle> {
                                     textfilenamea = filea.name;
                                   });
                                 } else {
-                                  
+                                  // User canceled the picker
                                 }
                               },
                               icon: Icon(Icons.add)),
@@ -401,7 +415,7 @@ class _regsingleState extends State<regsingle> {
                                     textfilenamec = filec.name;
                                   });
                                 } else {
-                                  // User canceled the picker
+                                  
                                 }
                               },
                               icon: Icon(Icons.add)),
@@ -417,27 +431,40 @@ class _regsingleState extends State<regsingle> {
                     children: [
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => regteam(), //ไว้กดหน้าที่ต้องการไป
-                              )
-                            );
-                          print(fileaname);
-                          print(filebname);
-                          print(filecname);
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //       builder: (context) => regteam(), //ไว้กดหน้าที่ต้องการไป
+                          //     )
+                          //   );
+                          // print(fileaname);
+                          // print(filebname);
+                          // print(filecname);
                         },
                         child: Text(
-                          'ยืนยัน',
+                          'ย้อนกลับ',
                           style: TextStyle(fontSize: 15),
                         ),
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.green),
-                            
+                            backgroundColor: Colors.orange),    
                       ),
+                      SizedBox(width: 5,),
+                      ElevatedButton(
+                      onPressed: (){
+                      
+                      }, 
+                      child: Text("เพิ่มสมาชิก",style: TextStyle(fontSize: 15),),
+                      
+                    ),
                     ],
                   ),
                 ),
+
+                
+
+
+
+                
               ],
             ),
           ),

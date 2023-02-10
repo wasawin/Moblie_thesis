@@ -24,31 +24,24 @@ class _showrankState extends State<showrank> {
                   label: Text('ชื่อ',
                       style: TextStyle(
                           fontSize: 18, fontWeight: FontWeight.bold))),
-              DataColumn(
-                  label: Text('คะแนน',
-                      style: TextStyle(
-                          fontSize: 18, fontWeight: FontWeight.bold))),
             ],
             rows: [
               DataRow(cells: [
                 DataCell(Text('1')),
                 DataCell(Text('ชลธี')),
-                DataCell(Text('20')),
+                
               ]),
               DataRow(cells: [
                 DataCell(Text('2')),
                 DataCell(Text('นนทพัทธ์')),
-                DataCell(Text('10')),
               ]),
               DataRow(cells: [
                 DataCell(Text('3')),
-                DataCell(Text('จักริน')),
-                DataCell(Text('5')),
+                DataCell(Text('จักริน')), 
               ]),
               DataRow(cells: [
                 DataCell(Text('4')),
                 DataCell(Text('วสวิญญ์')),
-                DataCell(Text('1')),
               ]),
             ],
           ),
