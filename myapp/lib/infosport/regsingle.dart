@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:dropdown_button2/custom_dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/infosport/info.dart';
+import 'package:myapp/infosport/otp.dart';
 import 'package:myapp/infosport/regteam.dart';
 import 'package:myapp/test.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
@@ -420,7 +421,7 @@ class _regsingleState extends State<regsingle> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => regteam(), //ไว้กดหน้าที่ต้องการไป
+                                builder: (context) => otp(), //ไว้กดหน้าที่ต้องการไป
                               )
                             );
                           print(fileaname);

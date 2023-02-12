@@ -19,8 +19,8 @@ class _showmatchState extends State<showmatch> {
         return
          GestureDetector(onTap: () {
            print("กำลังเลือก $index");
-           //
-           //
+           //แสดงรายละเอียด วันเวลาที่แข่ง คะแนนของแต่ละทีม/เดี่ยว สถานที่แข่ง
+           //เป็น popup 
          },
          child: Container(
            height: MediaQuery.of(context).size.height * 0.15,
