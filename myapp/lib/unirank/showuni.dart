@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class showuni extends StatefulWidget {
   const showuni({super.key});
 
@@ -13,41 +14,24 @@ class _showuniState extends State<showuni> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 3, 42, 121),
+        title: Text("อันดับเหรียญ"),
+        leading: BackButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
     
-    body: SingleChildScrollView(
-      child: Column(
+    body: Container(
+      color: Colors.black,
+      child: ListView(
         children: [
-          Container(
-            color: Colors.grey[400],
-            child: Row(
-              children: [
-                Text("อันดับ"),
-                Text("มหาวิทยาลัย"),
-                Text("ที่ 1"),
-                Text("ที่ 2"),
-                Text("ที่ 3"),
-              ],
-            ),
-          ),
-          Container(
-            child: Row(
-              children: [
-                Text("1"),
-                Text("มทร.ธัญบุรี"),
-                Text("5"),
-                Text("3"),
-                Text("2"),
-
-              ],
-            ),
-          ),
-
-          
+          Text("hello",style: TextStyle(color: Colors.white),),
         ],
       ),
       ),
-    );
     
+    
+    );
   }
 }
