@@ -16,7 +16,7 @@ class _showuniState extends State<showuni> {
         title: Text("อันดับเหรียญ"),
       ),
       body: Container(
-        color: Colors.grey[400],
+        color: Color.fromARGB(255, 239, 239, 239),
         child: ListView(
           children: [
             DataTable(
@@ -39,22 +39,22 @@ class _showuniState extends State<showuni> {
               rows: [
                 DataRow(cells: [
                   DataCell(Text('1')),
-                  DataCell(Text('ชลธี')),
+                  DataCell(Text('มทร.ธัญบุรี')),
                   DataCell(Text('2')),
                 ]),
                 DataRow(cells: [
                   DataCell(Text('2')),
-                  DataCell(Text('นนทพัทธ์')),
+                  DataCell(Text('มทร.ล้านนา')),
                   DataCell(Text('3')),
                 ]),
                 DataRow(cells: [
                   DataCell(Text('3')),
-                  DataCell(Text('จักริน')),
+                  DataCell(Text('มทร.อีสาน')),
                   DataCell(Text('4')),
                 ]),
                 DataRow(cells: [
                   DataCell(Text('4')),
-                  DataCell(Text('วสวิญญ์')),
+                  DataCell(Text('มทร.พระนคร')),
                   DataCell(Text('5')),
                 ]),
               ],
