@@ -6,6 +6,7 @@ import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:myapp/sport.dart';
 import 'package:myapp/test.dart';
 import 'package:myapp/testtt.dart';
+import 'package:myapp/unirank/detailuni.dart';
 import 'package:myapp/unirank/showuni.dart';
 
 void main() {
@@ -93,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => showuni())); //sport() ไว้กดหน้าที่ต้องการไป
+                                            builder: (context) => detailuni())); //sport() ไว้กดหน้าที่ต้องการไป
                                   },
                                   child: Text('ดูทั้งหมด'),
                                   style: ElevatedButton.styleFrom(

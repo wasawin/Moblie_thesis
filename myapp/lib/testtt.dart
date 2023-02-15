@@ -121,21 +121,21 @@ class _Page3State extends State<Page3> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(16),
-      child: Form(
-        key: _formKey,
-        child: Column(
-          children: [
-            TextFormField(
-              decoration: InputDecoration(labelText: "Address"),
-            ),
-            TextFormField(
-              decoration: InputDecoration(labelText: "City"),
-            ),
-          ],
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 3, 42, 121),
       ),
+      body: ListView.builder(
+          itemCount: 5,
+          itemBuilder: (BuildContext context, int index) {
+            return ListTile(
+                leading: const Icon(Icons.list),
+                trailing: const Text(
+                  "GFG",
+                  style: TextStyle(color: Colors.green, fontSize: 15),
+                ),
+                title: Text("List item $index"));
+          }),
     );
   }
 }
