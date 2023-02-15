@@ -29,10 +29,10 @@ class _testState extends State<test> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Text("อันดับ",style: TextStyle(
+                Text("  อันดับ",style: TextStyle(
                   fontSize: 18,
                 ),),
-                Text("มหาวิทยาลัย",style: TextStyle(
+                Text("  มหาวิทยาลัย",style: TextStyle(
                   fontSize: 18,
                 ),),
                 Text("จำนวนเหรียญ",style: TextStyle(
@@ -42,18 +42,20 @@ class _testState extends State<test> {
             ),
           ),
           Expanded(
-            child: ListView.builder(
-              itemCount: 9,
-              itemBuilder: (BuildContext context, int indexs) {
-            return Universitylist(
-              index:indexs+1,
-              label: "RMUTT",
-              rankscore: 5,
-            );
-          }
-
-            ),
-           )
+  child: ListView.builder(
+    itemCount: 9,
+    itemBuilder: (BuildContext context, int index) {
+      return Universitylist(
+        coinbronze: universitys["Coin_Bronze"]![index],
+        coinsilver: universitys["Coin_Silver"]![index],
+        coingold: universitys["Coin_Gold"]![index],
+        index: index,
+        label: universitys["Name"]![index],
+        cointotal: universitys["Coin_total"]![index],
+      );
+    },
+  ),
+)
          
 
 
