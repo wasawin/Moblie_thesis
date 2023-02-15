@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/unirank/Constants.dart';
+import 'package:myapp/unirank/Universitylist.dart';
 
 
 
@@ -19,19 +21,46 @@ class _testState extends State<test> {
           title: Text("อันดับเหรียญ"),
         ),
         
-      body: ListView.builder(
-          itemCount: 5,
-          itemBuilder: (BuildContext context, int index) {
-            return ListTile(
-                leading: const Icon(Icons.list),
-                trailing: const Text(
-                  "GFG",
-                  style: TextStyle(color: Colors.green, fontSize: 15),
-                ),
-                title: Text("List item $index"));
-          }),
-    );
-   
+      body: Column(
+        children: [
+
+          Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text("อันดับ",style: TextStyle(
+                  fontSize: 18,
+                ),),
+                Text("มหาวิทยาลัย",style: TextStyle(
+                  fontSize: 18,
+                ),),
+                Text("จำนวนเหรียญ",style: TextStyle(
+                  fontSize: 18,
+                ),),
+              ],
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: 9,
+              itemBuilder: (BuildContext context, int indexs) {
+            return Universitylist(
+              index:indexs+1,
+              label: "RMUTT",
+              rankscore: 5,
+            );
+          }
+
+            ),
+           )
+         
+
+
+        ],), 
+      
     
+      
+      );
   }
 }
