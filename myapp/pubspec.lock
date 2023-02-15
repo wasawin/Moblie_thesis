@@ -64,6 +64,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.16.0"
+  colorful_iconify_flutter:
+    dependency: transitive
+    description:
+      name: colorful_iconify_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.3"
   cross_file:
     dependency: transitive
     description:
@@ -212,6 +219,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.2"
+  iconify_flutter:
+    dependency: "direct main"
+    description:
+      name: iconify_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.5"
   image_cropper:
     dependency: transitive
     description:
