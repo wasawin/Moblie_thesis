@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/infosport/regsingle.dart';
+import 'package:myapp/infosport/regteam.dart';
 import 'package:myapp/test.dart';
 import 'package:multi_image_layout/multi_image_layout.dart';
 
@@ -46,7 +47,7 @@ class _infoState extends State<info> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => regsingle(), //ไว้กดหน้าที่ต้องการไป
+                                  builder: (context) => regteam(), //ไว้กดหน้าที่ต้องการไป
                                 ));
                           },
                           child: Text(

@@ -27,7 +27,7 @@ class _regteamState extends State<regteam> {
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 3, 42, 121),
           title: Text(
-            "สมัครแข่งขันทีม",
+            "สมัครแหข่งขันทีม",
             style: TextStyle(fontSize: 18),
           ), 
           leading: BackButton(

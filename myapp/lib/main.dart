@@ -7,7 +7,6 @@ import 'package:myapp/sport.dart';
 import 'package:myapp/test.dart';
 import 'package:myapp/testtt.dart';
 import 'package:myapp/unirank/detailuni.dart';
-import 'package:myapp/unirank/showuni.dart';
 
 void main() {
   runApp(const MyApp());
@@ -57,6 +56,33 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Color.fromARGB(255, 3, 42, 121),
         title: Text(widget.title),
       ),
+      drawer: Drawer(
+        backgroundColor: Color.fromARGB(255, 33, 130, 191),
+        child: ListView(
+          children: <Widget>[
+            ListTile(
+              title: const Text(
+                "ดูรายการอันดับทั้งหมด",
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => detailuni()));
+              },
+            ),
+            // ListTile(
+            //   title: Text("เมนู 2"),
+            //   onTap: () {
+            //   },
+            // ),
+            // ListTile(
+            //   title: Text("เมนู 3"),
+            //   onTap: () {
+            //   },
+            // ),
+          ],
+        ),
+      ),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
@@ -94,7 +120,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => test())); //sport() ไว้กดหน้าที่ต้องการไป
+                                            builder: (context) =>
+                                                sport())); //sport() ไว้กดหน้าที่ต้องการไป
                                   },
                                   child: Text('ดูทั้งหมด'),
                                   style: ElevatedButton.styleFrom(
@@ -108,7 +135,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Padding(
                         padding: const EdgeInsets.only(top: 20, bottom: 22),
                         child: Container(
-                            color: Colors.amber,
+                            //color: Colors.amber,
                             height: MediaQuery.of(context).size.height * 0.32,
                             width: MediaQuery.of(context).size.width * 1,
                             child: ListView.builder(
