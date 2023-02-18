@@ -47,7 +47,7 @@ class _infoState extends State<info> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => regteam(), //ไว้กดหน้าที่ต้องการไป
+                                  builder: (context) => RegisterTeamScreen(), //ไว้กดหน้าที่ต้องการไป
                                 ));
                           },
                           child: Text(

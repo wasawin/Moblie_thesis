@@ -1,142 +1,139 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:file_picker/file_picker.dart';
 
 class testtt extends StatefulWidget {
-  const testtt({super.key});
-
   @override
-  State<testtt> createState() => _testttState();
+  _testttState createState() => _testttState();
 }
 
 class _testttState extends State<testtt> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  late String _teamName = "";
+  late String _representativeName = "";
+  late String _phoneNumber = "";
+  late String _email = "";
+  late String _imagePath = "";
 
-  final _formKey = GlobalKey<FormState>();
-  int currentPage = 0;
-  List<Widget> pages = [Page1(), Page2(), Page3()];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Form(
-        key: _formKey,
-        child: PageView(
-          children: pages,
-          onPageChanged: (index) {
-            setState(() {
-              currentPage = index;
-            });
-          },
-        ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: currentPage,
-        onTap: (index) {
-          setState(() {
-            currentPage = index;
-          });
-        },
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: "Page 1",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.location_city),
-            label: "Page 2",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.payment),
-            label: "Page 3",
-          ),
-        ],
-      ),
-    );
+  Future<void> _openFilePicker() async {
+    FilePickerResult? result =
+        await FilePicker.platform.pickFiles(type: FileType.image);
+    if (result != null) {
+      setState(() {
+        _imagePath = result.files.single.path!;
+      });
+    }
   }
-}
-
-class Page1 extends StatefulWidget {
-  @override
-  _Page1State createState() => _Page1State();
-}
-
-class _Page1State extends State<Page1> {
-  final _formKey = GlobalKey<FormState>();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(16),
-      child: Form(
-        key: _formKey,
-        child: Column(
-          children: [
-            TextFormField(
-              decoration: InputDecoration(labelText: "Name"),
-            ),
-            TextFormField(
-              decoration: InputDecoration(labelText: "Email"),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class Page2 extends StatefulWidget {
-  @override
-  _Page2State createState() => _Page2State();
-}
-
-class _Page2State extends State<Page2> {
-  final _formKey = GlobalKey<FormState>();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(16),
-      child: Form(
-        key: _formKey,
-        child: Column(
-          children: [
-            TextFormField(
-              decoration: InputDecoration(labelText: "Address"),
-            ),
-            TextFormField(
-              decoration: InputDecoration(labelText: "City"),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class Page3 extends StatefulWidget {
-  @override
-  _Page2State createState() => _Page2State();
-}
-
-class _Page3State extends State<Page3> {
-  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text("สมัครแข่งขันทีม"),
         backgroundColor: Color.fromARGB(255, 3, 42, 121),
       ),
-      body: ListView.builder(
-          itemCount: 5,
-          itemBuilder: (BuildContext context, int index) {
-            return ListTile(
-                leading: const Icon(Icons.list),
-                trailing: const Text(
-                  "GFG",
-                  style: TextStyle(color: Colors.green, fontSize: 15),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TextFormField(
+                  decoration: InputDecoration(
+                    labelText: "ชื่อทีม",
+                    border: OutlineInputBorder(),
+                  ),
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'โปรดกรอกชื่อทีม';
+                    }
+                    return null;
+                  },
+                  onSaved: (value) {
+                    _teamName = value!;
+                  },
                 ),
-                title: Text("List item $index"));
-          }),
+                SizedBox(height: 16.0),
+                TextFormField(
+                  decoration: InputDecoration(
+                    labelText: "ชื่อ-นามสกุล (ตัวแทน)",
+                    border: OutlineInputBorder(),
+                  ),
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'โปรดกรอกชื่อ-นามสกุล (ตัวแทน)';
+                    }
+                    return null;
+                  },
+                  onSaved: (value) {
+                    _representativeName = value!;
+                  },
+                ),
+                SizedBox(height: 16.0),
+                TextFormField(
+                  decoration: InputDecoration(
+                    labelText: "เบอร์โทร (ตัวแทน)",
+                    border: OutlineInputBorder(),
+                  ),
+                  keyboardType: TextInputType.phone,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'โปรดกรอกเบอร์โทร (ตัวแทน)';
+                    }
+                    return null;
+                  },
+                  onSaved: (value) {
+                    _phoneNumber = value!;
+                  },
+                ),
+                SizedBox(height: 16.0),
+                TextFormField(
+                  decoration: InputDecoration(
+                    labelText: "อีเมล์ (ตัวแทน)",
+                    border: OutlineInputBorder(),
+                  ),
+                  keyboardType: TextInputType.emailAddress,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'โปรดกรอกอีเมล์ (ตัวแทน)';
+                    }
+                    return null;
+                  },
+                  onSaved: (value) {
+                    _email = value!;
+                  },
+                ),
+                SizedBox(height: 16.0),
+                ElevatedButton(
+                  child: Text('แนบรูป'),
+                  onPressed: _openFilePicker,
+                ),
+                SizedBox(height: 16.0),
+                _imagePath != null
+                    ? Image.file(
+                        File(_imagePath),
+                        height: 45,
+                        width: 45,
+                      )
+                    : SizedBox.shrink(),
+                SizedBox(height: 16.0),
+                ElevatedButton(
+                  child: Text('สมัคร'),
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      _formKey.currentState!.save();
+// ส่งข้อมูลไปยังเซิร์ฟเวอร์
+                    }
+                  },
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
-

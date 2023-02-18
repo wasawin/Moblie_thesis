@@ -5,7 +5,6 @@ import 'package:dropdown_button2/custom_dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/infosport/info.dart';
 import 'package:myapp/infosport/otp.dart';
-import 'package:myapp/infosport/regteam.dart';
 import 'package:myapp/test.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:intl/intl.dart';
