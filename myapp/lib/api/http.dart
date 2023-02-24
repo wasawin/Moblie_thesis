@@ -1,7 +1,7 @@
 import 'package:http/http.dart';
 
 class RequestResult {
-  bool testok;
+  late bool testok;
   dynamic data;
 
 }

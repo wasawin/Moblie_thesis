@@ -46,7 +46,7 @@ class _RegisterTeamScreenState extends State<RegisterTeamScreen> {
             ),
             TextFormField(
               decoration: InputDecoration(
-                labelText: 'อีเมล์(ตัวแทน)',
+                labelText: 'อีเมล(ตัวแทน)',
               ),
             ),
             SizedBox(height: 16),
@@ -57,7 +57,7 @@ class _RegisterTeamScreenState extends State<RegisterTeamScreen> {
                 width: 100,
               ),
             ],
-            Row(
+            Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 ElevatedButton(
@@ -69,7 +69,7 @@ class _RegisterTeamScreenState extends State<RegisterTeamScreen> {
                         onClosing: () {},
                         builder: (BuildContext context) {
                           return Container(
-                            height: 100.0,
+                            height: 100,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: <Widget>[
@@ -83,7 +83,6 @@ class _RegisterTeamScreenState extends State<RegisterTeamScreen> {
                                         Navigator.pop(context);
                                       },
                                     ),
-                                    Text("กล้องถ่ายรูป"),
                                   ],
                                 ),
                                 Column(

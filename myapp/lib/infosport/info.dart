@@ -6,6 +6,8 @@ import 'package:myapp/test.dart';
 import 'package:multi_image_layout/multi_image_layout.dart';
 import 'package:myapp/testtt.dart';
 
+import 'addmember.dart';
+
 class info extends StatefulWidget {
   const info({super.key});
 
@@ -48,7 +50,7 @@ class _infoState extends State<info> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => testtt(), //ไว้กดหน้าที่ต้องการไป
+                                  builder: (context) => addmember(), //ไว้กดหน้าที่ต้องการไป
                                 ));
                           },
                           child: Text(

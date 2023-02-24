@@ -106,7 +106,7 @@ class _addmemberState extends State<addmember> {
               //color: Colors.white,
               child: TextButton( 
                 onPressed: (){
-
+                    //ส่งค่าสมาชิกทั้งหมด แล้วไปยังหน้า OTP
                 }, 
                 child: Text("ยืนยัน",style: TextStyle(color:Colors.white,fontSize: 15),),
                   
@@ -430,15 +430,7 @@ class _addmemberState extends State<addmember> {
                     children: [
                       ElevatedButton(
                         onPressed: () {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //       builder: (context) => regteam(), //ไว้กดหน้าที่ต้องการไป
-                          //     )
-                          //   );
-                          // print(fileaname);
-                          // print(filebname);
-                          // print(filecname);
+                          // Navigator.push ปุ่มย้อนกลับ
                         },
                         child: Text(
                           'ย้อนกลับ',
@@ -450,7 +442,7 @@ class _addmemberState extends State<addmember> {
                       SizedBox(width: 5,),
                       ElevatedButton(
                       onPressed: (){
-                      
+                        //เก็บค่าสมาชิกส่งเข้า database
                       }, 
                       child: Text("เพิ่มสมาชิก",style: TextStyle(fontSize: 15),),
                       

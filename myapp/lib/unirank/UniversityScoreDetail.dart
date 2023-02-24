@@ -136,47 +136,54 @@ class _UniversityScoreDetailState extends State<UniversityScoreDetail> {
                 style: TextStyle(fontSize: 26),
               ),
             ),
-            Container(
-              height: MediaQuery.of(context).size.height * 0.03,
-              width: MediaQuery.of(context).size.width*0.94,
-              decoration: BoxDecoration(
-                color: Colors.blue,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                ),
-                border: Border(
-                  left: BorderSide(width: 2.0),
-                  right: BorderSide(width: 2.0),
-                  top: BorderSide(width: 2.0),
-                ),
-              ),
-            ),
-            Container(
-              color: Colors.blue,
-              width: MediaQuery.of(context).size.width*0.94,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 35,right: 28,bottom:10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "ชื่อรายการ",
-                      style: TextStyle(fontSize: 20),
+            Stack(
+              children: [
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.05,
+                  width: MediaQuery.of(context).size.width * 0.96,
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20),
                     ),
-                    Text(
-                      "อันดับ",
-                      style: TextStyle(fontSize: 20),
-                    )
-                  ],
+                    border: Border(
+                      left: BorderSide(width: 2.0),
+                      right: BorderSide(width: 2.0),
+                      top: BorderSide(width: 2.0),
+                    ),
+                  ),
                 ),
-              ),
+                Positioned(
+                  left: 35,
+                  top: 10,
+                  child: Text(
+                    'ชื่อรายการ',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                
+                Positioned(
+                  right: 30,
+                  top: 10,
+                  child: Text(
+                    'อันดับ',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ],
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height *
                   0.60,
                    // set the height to a fixed value
-                   width: MediaQuery.of(context).size.width*0.94,
+                   width: MediaQuery.of(context).size.width * 0.96,
               child: Container(
                 color: Colors.grey[350],
                 child: ListView.builder(
